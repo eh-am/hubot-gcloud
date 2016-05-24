@@ -31,5 +31,5 @@ module.exports = (robot) ->
   robot.respond /gcloud get clusters$/i, (msg) ->
     run_cmd 'gcloud', ['container','clusters','list'], (text) -> msg.send text
 
-  robot.respond /gcloud get clusters$/i, (msg) ->
+  robot.respond /get environment$/i, (msg) ->
     run_cmd 'printenv', [], (text) -> msg.send text
