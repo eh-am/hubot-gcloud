@@ -18,7 +18,9 @@
 run_cmd = (cmd, args, cb ) ->
     spawn = require("child_process").spawn
     opts =
-        env: {}
+        env: {
+          PATH: '/home/joel/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games'
+        }
     child = spawn(cmd, args, opts)
     child.stdout.on "data", (buffer) -> cb buffer.toString()
     child.stderr.on "data", (buffer) -> cb buffer.toString()
@@ -32,4 +34,4 @@ module.exports = (robot) ->
     run_cmd 'gcloud', ['container','clusters','list'], (text) -> msg.send text
 
   robot.respond /get environment$/i, (msg) ->
-    run_cmd 'printenv', ['--null'],(text) -> msg.send text
+    run_cmd 'printenv', [],(text) -> msg.send text
