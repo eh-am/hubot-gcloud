@@ -8,8 +8,8 @@
 #   None
 #
 # Commands:
-#   gcloud get clusters
-#
+#   gcloud get clusters - Lists all the GKE clusters for the project
+#   get environment - get the environment of the hubot system
 #
 # Author:
 #   Joel Parks <joel@parksfamily.us>
@@ -30,3 +30,6 @@ module.exports = (robot) ->
 
   robot.respond /gcloud get clusters$/i, (msg) ->
     run_cmd 'gcloud', ['container','clusters','list'], (text) -> msg.send text
+
+  robot.respond /gcloud get clusters$/i, (msg) ->
+    run_cmd 'printenv', [], (text) -> msg.send text
