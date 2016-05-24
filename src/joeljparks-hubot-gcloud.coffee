@@ -8,11 +8,11 @@
 #   None
 #
 # Commands:
-#   hubot docker ps
-#   hubot docker restart <container name>
+#   gcloud get clusters
+#
 #
 # Author:
-#   Michael Smith <michael.smith.ok@gmail.com>
+#   Joel Parks <joel@parksfamily.us>
 #
 
 run_cmd = (cmd, args, cb ) ->
@@ -24,9 +24,9 @@ run_cmd = (cmd, args, cb ) ->
     child.stderr.on "data", (buffer) -> cb buffer.toString()
 
 module.exports = (robot) ->
-  robot.respond /docker restart (.*)/i, (msg) ->
-    msg.send "Restarting "+msg.match[1].replace(/[\W]+/g, "")+"..."
-    run_cmd "docker", ["restart", msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
+  #robot.respond /docker restart (.*)/i, (msg) ->
+    #msg.send "Restarting "+msg.match[1].replace(/[\W]+/g, "")+"..."
+    #run_cmd "docker", ["restart", msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
-  robot.respond /docker ps$/i, (msg) ->
-    run_cmd 'docker', ['ps','-a','--format="{{.Names}}:\t{{.Status}}"'], (text) -> msg.send text
+  robot.respond /gcloud get clusters$/i, (msg) ->
+    run_cmd 'gcloud', ['container','clusters','list'], (text) -> msg.send text
