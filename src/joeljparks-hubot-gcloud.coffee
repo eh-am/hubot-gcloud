@@ -8,6 +8,7 @@
 #   None
 #
 # Commands:
+#   register gcloud cluster <clustername> - Gets credentials for the specified gcloud cluster
 #   get gcloud clusters - Lists all the GKE clusters for the project
 #   get gcloud config - Lists the current Gcloud config
 #   get gcloud pods - Lists the running Kubernetes pods
@@ -31,9 +32,9 @@ run_cmd = (cmd, args, cb ) ->
     child.stderr.on "data", (buffer) -> cb buffer.toString()
 
 module.exports = (robot) ->
-  #robot.respond /docker restart (.*)/i, (msg) ->
-    #msg.send "Restarting "+msg.match[1].replace(/[\W]+/g, "")+"..."
-    #run_cmd "docker", ["restart", msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
+  robot.respond /register gcloud cluster (.*)/i, (msg) ->
+    msg.send "Restarting "+msg.match[1].replace(/[\W]+/g, "")+"..."
+    run_cmd "gcloud", ["container", 'clusters', 'get-credentials' msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
   robot.respond /get gcloud clusters$/i, (msg) ->
     run_cmd 'gcloud', ['container','clusters','list','--format="table[box,title=Clusters](clusters[].name, clusters[].status)"'], (text) -> msg.send text
