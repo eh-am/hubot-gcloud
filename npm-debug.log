@@ -1,122 +1,62 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/Cellar/node/5.10.1/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'publish' ]
+1 verbose cli   'dist-tag',
+1 verbose cli   'add',
+1 verbose cli   'joeljparks@0.0.1',
+1 verbose cli   'latest' ]
 2 info using npm@3.9.2
 3 info using node@v5.10.1
-4 verbose publish [ '.' ]
-5 silly cache add args [ '.', null ]
-6 verbose cache add spec .
-7 silly cache add parsed spec Result {
-7 silly cache add   raw: '.',
-7 silly cache add   scope: null,
-7 silly cache add   name: null,
-7 silly cache add   rawSpec: '.',
-7 silly cache add   spec: '/Users/joeljparks/Dropbox/github/joeljparks-hubot-gcloud',
-7 silly cache add   type: 'directory' }
-8 verbose addLocalDirectory /Users/joeljparks/.npm/joeljparks-hubot-gcloud/0.0.0/package.tgz not in flight; packing
-9 verbose correctMkdir /Users/joeljparks/.npm correctMkdir not in flight; initializing
-10 info lifecycle joeljparks-hubot-gcloud@0.0.0~prepublish: joeljparks-hubot-gcloud@0.0.0
-11 silly lifecycle joeljparks-hubot-gcloud@0.0.0~prepublish: no script for prepublish, continuing
-12 verbose tar pack [ '/Users/joeljparks/.npm/joeljparks-hubot-gcloud/0.0.0/package.tgz',
-12 verbose tar pack   '/Users/joeljparks/Dropbox/github/joeljparks-hubot-gcloud' ]
-13 verbose tarball /Users/joeljparks/.npm/joeljparks-hubot-gcloud/0.0.0/package.tgz
-14 verbose folder /Users/joeljparks/Dropbox/github/joeljparks-hubot-gcloud
-15 verbose addLocalTarball adding from inside cache /Users/joeljparks/.npm/joeljparks-hubot-gcloud/0.0.0/package.tgz
-16 verbose correctMkdir /Users/joeljparks/.npm correctMkdir not in flight; initializing
-17 silly cache afterAdd joeljparks-hubot-gcloud@0.0.0
-18 verbose afterAdd /Users/joeljparks/.npm/joeljparks-hubot-gcloud/0.0.0/package/package.json not in flight; writing
-19 verbose correctMkdir /Users/joeljparks/.npm correctMkdir not in flight; initializing
-20 verbose afterAdd /Users/joeljparks/.npm/joeljparks-hubot-gcloud/0.0.0/package/package.json written
-21 silly publish { name: 'joeljparks-hubot-gcloud',
-21 silly publish   description: 'Use Hubot to manage your Google Cloud environment',
-21 silly publish   version: '0.0.0',
-21 silly publish   author: { name: 'joeljparks', email: 'joel@parksfamily.us' },
-21 silly publish   license: 'MIT',
-21 silly publish   keywords: [ 'hubot', 'hubot-scripts' ],
-21 silly publish   repository:
-21 silly publish    { type: 'git',
-21 silly publish      url: 'git://github.com/joeljparks/joeljparks-hubot-gcloud/.git' },
-21 silly publish   bugs: { url: 'https://github.com/joeljparks/joeljparks-hubot-gcloud/issues' },
-21 silly publish   dependencies: {},
-21 silly publish   peerDependencies: { hubot: '2.x' },
-21 silly publish   devDependencies:
-21 silly publish    { 'hubot-test-helper': '^1.3.0',
-21 silly publish      chai: '^2.1.1',
-21 silly publish      'coffee-script': '1.6.3',
-21 silly publish      grunt: '^0.4.5',
-21 silly publish      'grunt-cli': '^0.1.13',
-21 silly publish      'grunt-contrib-watch': '~0.6.1',
-21 silly publish      'grunt-mocha-test': '~0.12.7',
-21 silly publish      'grunt-release': '~0.11.0',
-21 silly publish      hubot: '2.x',
-21 silly publish      matchdep: '~0.3.0',
-21 silly publish      mocha: '^2.1.0',
-21 silly publish      sinon: '^1.13.0',
-21 silly publish      'sinon-chai': '^2.7.0' },
-21 silly publish   main: 'index.coffee',
-21 silly publish   scripts: { test: 'grunt test' },
-21 silly publish   readme: '# joeljparks-hubot-gcloud\n\nUse Hubot to manage your Google Cloud environment\n\nSee [`src/joeljparks-hubot-gcloud.coffee`](src/joeljparks-hubot-gcloud.coffee) for full documentation.\n\n## Installation\n\nIn hubot project repo, run:\n\n`npm install joeljparks-hubot-gcloud --save`\n\nThen add **joeljparks-hubot-gcloud** to your `external-scripts.json`:\n\n```json\n[\n  "joeljparks-hubot-gcloud"\n]\n```\n\n## Sample Interaction\n\n```\n-- Will be documented later\n```\n\n## NPM Module\n\nhttps://www.npmjs.com/package/joeljparks-hubot-gcloud\n',
-21 silly publish   readmeFilename: 'README.md',
-21 silly publish   gitHead: '1ce786c38583e0fdcf28051d23888159938eb202',
-21 silly publish   _id: 'joeljparks-hubot-gcloud@0.0.0',
-21 silly publish   _shasum: 'e2907d1cc2aac40b4bdd3044b257fbbcadbbd646',
-21 silly publish   _from: '.' }
-22 verbose getPublishConfig undefined
-23 silly mapToRegistry name joeljparks-hubot-gcloud
-24 silly mapToRegistry using default registry
-25 silly mapToRegistry registry https://registry.npmjs.org/
-26 silly mapToRegistry data Result {
-26 silly mapToRegistry   raw: 'joeljparks-hubot-gcloud',
-26 silly mapToRegistry   scope: null,
-26 silly mapToRegistry   name: 'joeljparks-hubot-gcloud',
-26 silly mapToRegistry   rawSpec: '',
-26 silly mapToRegistry   spec: 'latest',
-26 silly mapToRegistry   type: 'tag' }
-27 silly mapToRegistry uri https://registry.npmjs.org/joeljparks-hubot-gcloud
-28 verbose publish registryBase https://registry.npmjs.org/
-29 silly publish uploading /Users/joeljparks/.npm/joeljparks-hubot-gcloud/0.0.0/package.tgz
-30 verbose request uri https://registry.npmjs.org/joeljparks-hubot-gcloud
-31 verbose request sending authorization for write operation
-32 info attempt registry request try #1 at 11:06:23 AM
-33 verbose request using bearer token for auth
-34 verbose request id e492060c351b0112
-35 http request PUT https://registry.npmjs.org/joeljparks-hubot-gcloud
-36 http 403 https://registry.npmjs.org/joeljparks-hubot-gcloud
-37 verbose headers { 'content-type': 'application/json',
-37 verbose headers   'cache-control': 'max-age=300',
-37 verbose headers   'content-length': '95',
-37 verbose headers   'accept-ranges': 'bytes',
-37 verbose headers   date: 'Tue, 24 May 2016 16:06:26 GMT',
-37 verbose headers   via: '1.1 varnish',
-37 verbose headers   connection: 'keep-alive',
-37 verbose headers   'x-served-by': 'cache-iad2148-IAD',
-37 verbose headers   'x-cache': 'MISS',
-37 verbose headers   'x-cache-hits': '0',
-37 verbose headers   'x-timer': 'S1464105985.448634,VS0,VE738',
-37 verbose headers   vary: 'Accept-Encoding' }
-38 verbose request invalidating /Users/joeljparks/.npm/registry.npmjs.org/joeljparks-hubot-gcloud on PUT
-39 error publish Failed PUT 403
-40 verbose stack Error: "You cannot publish over the previously published version 0.0.0." : joeljparks-hubot-gcloud
-40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
-40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
-40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
-40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
-40 verbose stack     at emitTwo (events.js:100:13)
-40 verbose stack     at Request.emit (events.js:185:7)
-40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
-40 verbose stack     at emitOne (events.js:95:20)
-40 verbose stack     at Request.emit (events.js:182:7)
-40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
-41 verbose statusCode 403
-42 verbose pkgid joeljparks-hubot-gcloud
-43 verbose cwd /Users/joeljparks/Dropbox/github/joeljparks-hubot-gcloud
-44 error Darwin 15.4.0
-45 error argv "/usr/local/Cellar/node/5.10.1/bin/node" "/usr/local/bin/npm" "publish"
-46 error node v5.10.1
-47 error npm  v3.9.2
-48 error code E403
-49 error "You cannot publish over the previously published version 0.0.0." : joeljparks-hubot-gcloud
-50 error If you need help, you may report this error at:
-50 error     <https://github.com/npm/npm/issues>
-51 verbose exit [ 1, true ]
+4 verbose dist-tag add latest to joeljparks@0.0.1
+5 silly mapToRegistry name joeljparks
+6 silly mapToRegistry using default registry
+7 silly mapToRegistry registry https://registry.npmjs.org/
+8 silly mapToRegistry data Result {
+8 silly mapToRegistry   raw: 'joeljparks',
+8 silly mapToRegistry   scope: null,
+8 silly mapToRegistry   name: 'joeljparks',
+8 silly mapToRegistry   rawSpec: '',
+8 silly mapToRegistry   spec: 'latest',
+8 silly mapToRegistry   type: 'tag' }
+9 silly mapToRegistry uri https://registry.npmjs.org/joeljparks
+10 verbose request uri https://registry.npmjs.org/-/package/joeljparks/dist-tags
+11 verbose request no auth needed
+12 info attempt registry request try #1 at 11:15:06 AM
+13 verbose request using bearer token for auth
+14 verbose request id cc9bee1966ab37ea
+15 http request GET https://registry.npmjs.org/-/package/joeljparks/dist-tags
+16 http 403 https://registry.npmjs.org/-/package/joeljparks/dist-tags
+17 verbose headers { 'content-type': 'application/json',
+17 verbose headers   'cache-control': 'max-age=300',
+17 verbose headers   'content-length': '94',
+17 verbose headers   'accept-ranges': 'bytes',
+17 verbose headers   date: 'Tue, 24 May 2016 16:15:08 GMT',
+17 verbose headers   via: '1.1 varnish',
+17 verbose headers   connection: 'keep-alive',
+17 verbose headers   'x-served-by': 'cache-atl6228-ATL',
+17 verbose headers   'x-cache': 'MISS',
+17 verbose headers   'x-cache-hits': '0',
+17 verbose headers   'x-timer': 'S1464106508.435028,VS0,VE451',
+17 verbose headers   vary: 'Accept-Encoding' }
+18 verbose stack Error: Registry returned 403 for GET on https://registry.npmjs.org/-/package/joeljparks/dist-tags
+18 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+18 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
+18 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+18 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+18 verbose stack     at emitTwo (events.js:100:13)
+18 verbose stack     at Request.emit (events.js:185:7)
+18 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+18 verbose stack     at emitOne (events.js:95:20)
+18 verbose stack     at Request.emit (events.js:182:7)
+18 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+19 verbose statusCode 403
+20 verbose cwd /Users/joeljparks/Dropbox/github/joeljparks-hubot-gcloud
+21 error Darwin 15.4.0
+22 error argv "/usr/local/Cellar/node/5.10.1/bin/node" "/usr/local/bin/npm" "dist-tag" "add" "joeljparks@0.0.1" "latest"
+23 error node v5.10.1
+24 error npm  v3.9.2
+25 error code E403
+26 error Registry returned 403 for GET on https://registry.npmjs.org/-/package/joeljparks/dist-tags
+27 error If you need help, you may report this error at:
+27 error     <https://github.com/npm/npm/issues>
+28 verbose exit [ 1, true ]
