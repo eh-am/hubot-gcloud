@@ -33,8 +33,8 @@ run_cmd = (cmd, args, cb ) ->
 
 module.exports = (robot) ->
   robot.respond /register gcloud cluster (.*)/i, (msg) ->
-    msg.send "Restarting "+msg.match[1].replace(/[\W]+/g, "")+"..."
-    run_cmd "gcloud", ["container", 'clusters', 'get-credentials' msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
+    msg.send "Registering "+msg.match[1].replace(/[\W]+/g, "")+"..."
+    run_cmd 'gcloud', ['container', 'clusters', 'get-credentials', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
   robot.respond /get gcloud clusters$/i, (msg) ->
     run_cmd 'gcloud', ['container','clusters','list','--format="table[box,title=Clusters](clusters[].name, clusters[].status)"'], (text) -> msg.send text
