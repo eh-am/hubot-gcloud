@@ -38,7 +38,7 @@ module.exports = (robot) ->
     run_cmd 'gcloud', ['container', 'clusters', 'get-credentials', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
   robot.respond /get gcloud clusters$/i, (msg) ->
-    run_cmd 'gcloud', ['container','clusters','list','--format="table[box,title=Clusters](clusters[].name, clusters[].status)"'], (text) -> msg.send text
+    run_cmd 'gcloud', ['container','clusters','list','--format=table[box,title=Clusters](clusters[].name, clusters[].status)'], (text) -> msg.send text
 
   robot.respond /get gcloud config$/i, (msg) ->
     run_cmd 'gcloud', ['config','list'], (text) -> msg.send text
@@ -53,7 +53,7 @@ module.exports = (robot) ->
     run_cmd 'kubectl', ['get','deployments'], (text) -> msg.send text
 
   robot.respond /get gcloud instances$/i, (msg) ->
-    run_cmd 'gcloud', ['compute','instances','list','--format="table[box,title=Instances](name, status)"'], (text) -> msg.send text
+    run_cmd 'gcloud', ['compute','instances','list','--format=table[box,title=Instances](name, status)'], (text) -> msg.send text
 
   robot.respond /get gcloud path$/i, (msg) ->
     run_cmd 'printenv', [],(text) -> msg.send text
