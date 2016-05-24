@@ -14,7 +14,7 @@ Then add **joeljparks-hubot-gcloud** to your `external-scripts.json`:
 
 ```json
 [
-  "hubot-joeljparks-hubot-gcloud"
+  "joeljparks-hubot-gcloud"
 ]
 ```
 

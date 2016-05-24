@@ -15,8 +15,7 @@
 #   joeljparks <joel@parksfamily.us>
 
 module.exports = (robot) ->
-  robot.respond /hello/, (res) ->
-    res.reply "hello!"
-
-  robot.hear /orly/, (res) ->
-    res.send "yarly"
+  robot.respond /(cmd)/i, (msg) ->
+    doing = spawn 'ls', ['-la']
+    doing.stdout.on 'data', (data) ->
+      msg.send data.toString()
