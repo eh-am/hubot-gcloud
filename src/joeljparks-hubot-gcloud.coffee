@@ -8,14 +8,14 @@
 #   None
 #
 # Commands:
-#   register gcloud cluster <clustername> - Gets credentials for the specified gcloud cluster
-#   get gcloud clusters - Lists all the GKE clusters for the project
-#   get gcloud config - Lists the current Gcloud config
-#   get gcloud pods - Lists the running Kubernetes pods
-#   get gcloud services - Lists the running Kubernetes services
-#   get gcloud deployments - List the running Kubernetes deployments
-#   get gcloud instances - List the running GCE instances
-#   get gcloud path - Returns the PATH for gcloud script execution
+#   hubot register gcloud cluster <clustername> - Gets credentials for the specified gcloud cluster
+#   hubot get gcloud clusters - Lists all the GKE clusters for the project
+#   hubot get gcloud config - Lists the current Gcloud config
+#   hubot get gcloud pods - Lists the running Kubernetes pods
+#   hubot get gcloud services - Lists the running Kubernetes services
+#   hubot get gcloud deployments - List the running Kubernetes deployments
+#   hubot get gcloud instances - List the running GCE instances
+#   hubot get gcloud path - Returns the PATH for gcloud script execution
 #
 # Author:
 #   Joel Parks <joel@parksfamily.us>
@@ -38,22 +38,22 @@ module.exports = (robot) ->
     run_cmd 'gcloud', ['container', 'clusters', 'get-credentials', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
   robot.respond /get gcloud clusters$/i, (msg) ->
-    run_cmd 'gcloud', ['container','clusters','list','--format=table[box,title=Clusters](clusters[].name, clusters[].status)'], (text) -> msg.send text
+    run_cmd 'gcloud', ['container','clusters','list'], (text) -> msg.send text
 
   robot.respond /get gcloud config$/i, (msg) ->
     run_cmd 'gcloud', ['config','list'], (text) -> msg.send text
 
   robot.respond /get gcloud pods$/i, (msg) ->
-    run_cmd 'kubectl', ['get','pods'], (text) -> msg.send text
+    run_cmd 'kubectl', ['get','pods', '--output="wide"'], (text) -> msg.send text
 
   robot.respond /get gcloud services$/i, (msg) ->
-    run_cmd 'kubectl', ['get','services'], (text) -> msg.send text
+    run_cmd 'kubectl', ['get','services', '--output="wide"'], (text) -> msg.send text
 
   robot.respond /get gcloud deployments$/i, (msg) ->
-    run_cmd 'kubectl', ['get','deployments'], (text) -> msg.send text
+    run_cmd 'kubectl', ['get','deployments', '--output="wide"'], (text) -> msg.send text
 
   robot.respond /get gcloud instances$/i, (msg) ->
-    run_cmd 'gcloud', ['compute','instances','list','--format=table[box,title=Instances](name, status)'], (text) -> msg.send text
+    run_cmd 'gcloud', ['compute','instances','list'], (text) -> msg.send text
 
   robot.respond /get gcloud path$/i, (msg) ->
     run_cmd 'printenv', [],(text) -> msg.send text
