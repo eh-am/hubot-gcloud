@@ -16,6 +16,9 @@
 #   hubot get gcloud deployments - List the running Kubernetes deployments
 #   hubot get gcloud instances - List the running GCE instances
 #   hubot get gcloud path - Returns the PATH for gcloud script execution
+#   hubot describe gcloud services <servicename> - Returns details of specified service.  No service specified returns all services.
+#   hubot describe gcloud deployments <deployment> - Returns details of specified deployment.  No service specified returns all deployment.
+#   hubot describe gcloud pods <pod> - Returns details of specified pod.  No service specified returns all pods.
 #
 # Author:
 #   Joel Parks <joel@parksfamily.us>
@@ -51,6 +54,15 @@ module.exports = (robot) ->
 
   robot.respond /get gcloud deployments$/i, (msg) ->
     run_cmd 'kubectl', ['get','deployments', '--output=wide'], (text) -> msg.send text
+
+  robot.respond /describe gcloud pod (.*)/i, (msg) ->
+    run_cmd 'kubectl', ['describe', 'pods', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
+
+  robot.respond /describe gcloud services (.*)/i, (msg) ->
+    run_cmd 'kubectl', ['describe', 'services', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
+
+  robot.respond /describe gcloud deployments (.*)/i, (msg) ->
+    run_cmd 'kubectl', ['describe', 'deploymens', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
   robot.respond /get gcloud instances$/i, (msg) ->
     run_cmd 'gcloud', ['compute','instances','list'], (text) -> msg.send text
