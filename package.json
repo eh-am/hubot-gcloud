@@ -1,7 +1,7 @@
 {
   "name": "joeljparks-hubot-gcloud",
   "description": "Use Hubot to manage your Google Cloud environment",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "author": "joeljparks <joel@parksfamily.us>",
   "license": "MIT",
 
