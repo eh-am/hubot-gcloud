@@ -58,7 +58,7 @@ module.exports = (robot) ->
     run_cmd 'kubectl', ['get','deployments', '--output=wide'], (text) -> msg.send text
 
   robot.respond /create gcloud cluster(.*)/i, (msg) ->
-    run_cmd 'kubectl', ['describe', 'pods', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
+    run_cmd 'gcloud', ['container', 'clusters', 'create', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
   robot.respond /describe gcloud pods(.*)/i, (msg) ->
     run_cmd 'kubectl', ['describe', 'pods', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
