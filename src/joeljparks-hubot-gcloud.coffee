@@ -21,6 +21,7 @@
 #   hubot describe gcloud deployments <deployment> - Returns details of specified deployment.  No service specified returns all deployment.
 #   hubot describe gcloud pods <pod> - Returns details of specified pod.  No service specified returns all pods.
 #   hubot destroy gcloud services <servicename> - Deletes the service and deployment for the specified service.
+#   hubot destroy gcloud cluster <clustername> - Deletes the specified GKE cluster.
 #
 # Author:
 #   Joel Parks <joel@parksfamily.us>
@@ -60,6 +61,9 @@ module.exports = (robot) ->
   robot.respond /create gcloud cluster(.*)/i, (msg) ->
     run_cmd 'gcloud', ['container', 'clusters', 'create', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
+  robot.respond /destroy gcloud cluster(.*)/i, (msg) ->
+    run_cmd 'gcloud', ['container', 'clusters', 'delete', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
+
   robot.respond /describe gcloud pods(.*)/i, (msg) ->
     run_cmd 'kubectl', ['describe', 'pods', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
@@ -69,7 +73,7 @@ module.exports = (robot) ->
   robot.respond /describe gcloud deployments(.*)/i, (msg) ->
     run_cmd 'kubectl', ['describe', 'deployments', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
 
-  robot.respond /nuke gcloud services(.*)/i, (msg) ->
+  robot.respond /destroy gcloud services(.*)/i, (msg) ->
     msg.send "Destroying the service"+msg.match[1].replace(/[\W]+/g, "")+"..."
     run_cmd 'kubectl', ['delete', 'services', msg.match[1].replace(/[\W]+/g, "")], (text) -> msg.send text
     msg.send "Destroying the deployment"+msg.match[1].replace(/[\W]+/g, "")+"..."
