@@ -44,13 +44,13 @@ module.exports = (robot) ->
     run_cmd 'gcloud', ['config','list'], (text) -> msg.send text
 
   robot.respond /get gcloud pods$/i, (msg) ->
-    run_cmd 'kubectl', ['get','pods', '--output="wide"'], (text) -> msg.send text
+    run_cmd 'kubectl', ['get','pods', '--output=wide'], (text) -> msg.send text
 
   robot.respond /get gcloud services$/i, (msg) ->
-    run_cmd 'kubectl', ['get','services', '--output="wide"'], (text) -> msg.send text
+    run_cmd 'kubectl', ['get','services', '--output=wide'], (text) -> msg.send text
 
   robot.respond /get gcloud deployments$/i, (msg) ->
-    run_cmd 'kubectl', ['get','deployments', '--output="wide"'], (text) -> msg.send text
+    run_cmd 'kubectl', ['get','deployments', '--output=wide'], (text) -> msg.send text
 
   robot.respond /get gcloud instances$/i, (msg) ->
     run_cmd 'gcloud', ['compute','instances','list'], (text) -> msg.send text
