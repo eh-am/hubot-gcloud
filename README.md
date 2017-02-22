@@ -1,20 +1,22 @@
-# joeljparks-hubot-gcloud
+# hubot-gcloud
+
+Forked from joeljparks-hubot-gcloud
 
 Use Hubot to manage your Google Cloud environment
 
-See [`src/joeljparks-hubot-gcloud.coffee`](src/joeljparks-hubot-gcloud.coffee) for full documentation.
+See [`src/hubot-gcloud.coffee`](src/hubot-gcloud.coffee) for full documentation.
 
 ## Installation
 
 In hubot project repo, run:
 
-`npm install joeljparks-hubot-gcloud --save`
+`sudo npm install eh-am/hubot-gcloud`
 
-Then add **joeljparks-hubot-gcloud** to your `external-scripts.json`:
+Then add **hubot-gcloud** to your `external-scripts.json`:
 
 ```json
 [
-  "joeljparks-hubot-gcloud"
+  "hubot-gcloud"
 ]
 ```
 
@@ -23,7 +25,3 @@ Then add **joeljparks-hubot-gcloud** to your `external-scripts.json`:
 ```
 -- Will be documented later
 ```
-
-## NPM Module
-
-https://www.npmjs.com/package/joeljparks-hubot-gcloud

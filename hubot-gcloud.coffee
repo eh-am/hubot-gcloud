@@ -29,12 +29,7 @@
 
 run_cmd = (cmd, args, cb ) ->
     spawn = require("child_process").spawn
-    opts =
-        env: {
-          PATH: '/home/joel/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games'
-          HOME: '/home/joel'
-        }
-    child = spawn(cmd, args, opts)
+    child = spawn(cmd, args)
     child.stdout.on "data", (buffer) -> cb buffer.toString()
     child.stderr.on "data", (buffer) -> cb buffer.toString()
 
