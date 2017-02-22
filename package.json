@@ -1,19 +1,19 @@
 {
-  "name": "joeljparks-hubot-gcloud",
+  "name": "hubot-gcloud",
   "description": "Use Hubot to manage your Google Cloud environment",
   "version": "0.0.20",
-  "author": "joeljparks <joel@parksfamily.us>",
+  "author": "joeljparks <joel@parksfamily.us>, eh-am <eduardoaleixomartins@gmail.com>",
   "license": "MIT",
 
   "keywords": "hubot, hubot-scripts",
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/joeljparks/joeljparks-hubot-gcloud/.git"
+    "url": "git://github.com/eh-am/hubot-gcloud/.git"
   },
 
   "bugs": {
-    "url": "https://github.com/joeljparks/joeljparks-hubot-gcloud/issues"
+    "url": "https://github.com/eh-am/hubot-gcloud/issues"
   },
 
   "dependencies": {
